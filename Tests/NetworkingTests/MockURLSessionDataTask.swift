@@ -5,7 +5,7 @@
 //  Created by Regis Araujo Melo on 10/03/23.
 //
 
-import UIKit
+import Foundation
 
 internal class MockURLSessionDataTask: URLSessionDataTask {
 
