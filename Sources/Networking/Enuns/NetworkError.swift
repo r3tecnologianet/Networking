@@ -9,6 +9,10 @@ import Foundation
 
 internal enum NetworkError: Error {
     case invalidResponse
-    case httpError(Int)
+    case httpError(statusCode: Int, data: Data?)
     case emptyData
+    case notConnected
+    case cancelled
+    case generic(Error)
+    case urlGeneration
 }

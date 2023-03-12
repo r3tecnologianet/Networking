@@ -17,7 +17,11 @@ internal class NetworkService {
         self.session = session
     }
 
-    func request<T: Decodable>(url: URL, method: HttpMethod = .get, headers: [String: String]? = nil, body: Data? = nil, completion: @escaping CompletionHandler<T>) {
+    func request<T: Decodable>(url: URL,
+                               method: HttpMethodtype = .get,
+                               headers: [String: String]? = nil,
+                               body: Data? = nil,
+                               completion: @escaping CompletionHandler<T>) {
 
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
@@ -39,7 +43,7 @@ internal class NetworkService {
             }
 
             guard (200..<300).contains(httpResponse.statusCode) else {
-                let error = NetworkError.httpError(httpResponse.statusCode)
+                let error = NetworkError.httpError(statusCode: httpResponse.statusCode, data: data)
                 completion(.failure(error))
                 return
             }
