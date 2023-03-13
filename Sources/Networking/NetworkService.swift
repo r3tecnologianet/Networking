@@ -7,17 +7,17 @@
 
 import Foundation
 
-internal class NetworkService {
+public class NetworkService {
 
-    typealias CompletionHandler<T: Decodable> = (Result<T, Error>) -> Void
+    public typealias CompletionHandler<T: Decodable> = (Result<T, Error>) -> Void
 
     private let session: URLSession
 
-    init(session: URLSession = URLSession(configuration: .default)) {
+    public init(session: URLSession = URLSession(configuration: .default)) {
         self.session = session
     }
 
-    func request<T: Decodable>(url: URL,
+    public func request<T: Decodable>(url: URL,
                                method: HttpMethodtype = .get,
                                headers: [String: String]? = nil,
                                body: Data? = nil,
