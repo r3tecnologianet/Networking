@@ -7,17 +7,21 @@
 
 import Foundation
 
-internal class NetworkService {
+public class NetworkService {
 
-    typealias CompletionHandler<T: Decodable> = (Result<T, Error>) -> Void
+    public typealias CompletionHandler<T: Decodable> = (Result<T, Error>) -> Void
 
     private let session: URLSession
 
-    init(session: URLSession = URLSession(configuration: .default)) {
+    public init(session: URLSession = URLSession(configuration: .default)) {
         self.session = session
     }
 
-    func request<T: Decodable>(url: URL, method: HttpMethod = .get, headers: [String: String]? = nil, body: Data? = nil, completion: @escaping CompletionHandler<T>) {
+    public func request<T: Decodable>(url: URL,
+                               method: HttpMethodtype = .get,
+                               headers: [String: String]? = nil,
+                               body: Data? = nil,
+                               completion: @escaping CompletionHandler<T>) {
 
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
@@ -39,7 +43,7 @@ internal class NetworkService {
             }
 
             guard (200..<300).contains(httpResponse.statusCode) else {
-                let error = NetworkError.httpError(httpResponse.statusCode)
+                let error = NetworkError.httpError(statusCode: httpResponse.statusCode, data: data)
                 completion(.failure(error))
                 return
             }
