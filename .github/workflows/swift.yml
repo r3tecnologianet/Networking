@@ -20,5 +20,7 @@ jobs:
       run: swift build -v
 #     - name: Run tests
 #       run: swift test -v
-    - name: Build xcframework
+
+    - name: Create XCFramework
+      uses: unsignedapps/swift-create-xcframework@v2
       run: swift create-xcframework
