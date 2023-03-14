@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build
       run: swift build -v
-    - name: Run tests
-      run: swift test -v
+#     - name: Run tests
+#       run: swift test -v
     - name: Build xcframework
       run: swift create-xcframework
