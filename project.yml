@@ -21,6 +21,14 @@ targets:
     platform: [iOS]
     sources:
       - Sources
+    preBuildScripts:
+      - name: "Lint"
+        script: | 
+          if which swiftlint > /dev/null; then
+            swiftlint
+          else
+            echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
+          fi
   NetworkingTests:
     type: bundle.unit-test
     platform: [iOS]

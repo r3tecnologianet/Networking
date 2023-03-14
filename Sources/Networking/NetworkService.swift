@@ -18,10 +18,10 @@ public class NetworkService {
     }
 
     public func request<T: Decodable>(url: URL,
-                               method: HttpMethodtype = .get,
-                               headers: [String: String]? = nil,
-                               body: Data? = nil,
-                               completion: @escaping CompletionHandler<T>) {
+                                      method: HttpMethodtype = .get,
+                                      headers: [String: String]? = nil,
+                                      body: Data? = nil,
+                                      completion: @escaping CompletionHandler<T>) {
 
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
@@ -62,4 +62,5 @@ public class NetworkService {
 
         }.resume()
     }
+
 }

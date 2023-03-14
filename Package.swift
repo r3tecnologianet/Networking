@@ -7,14 +7,14 @@ let package = Package(
     name: "Networking",
     defaultLocalization: "pt-BR",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v13)
     ],
     products: [
 
         .library(
             name: "Networking",
             targets: ["Networking"]
-        ),
+        )
     ],
     dependencies: [
 
@@ -26,6 +26,6 @@ let package = Package(
             dependencies: []),
         .testTarget(
             name: "NetworkingTests",
-            dependencies: ["Networking"]),
+            dependencies: ["Networking"])
     ]
 )
