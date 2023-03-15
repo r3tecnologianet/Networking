@@ -35,7 +35,7 @@ final class NetworkServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Request should succeed")
         let url = URL(string: "https://jsonplaceholder.typicode.com/todos/1")!
         let mockTodo = Todo(userId: 1, id: 1, title: "delectus aut autem", completed: false)
-        let data = try! JSONEncoder().encode(mockTodo)
+        let data = try JSONEncoder().encode(mockTodo)
         let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
         let session = MockURLSession(data: data, response: response, error: nil)
         networkService = NetworkService(session: session)
