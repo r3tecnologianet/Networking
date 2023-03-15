@@ -21,6 +21,7 @@ jobs:
 #     - name: Run tests
 #       run: swift test -v
 
-    - name: Create XCFramework
+    - name: Install XCFramework
       uses: unsignedapps/swift-create-xcframework@v2
+    - name: Generate XCFramework
       run: swift create-xcframework
