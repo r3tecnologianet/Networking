@@ -17,6 +17,14 @@ public class NetworkService {
         self.session = session
     }
 
+    /// Método para fazer uma requisição de rede.
+    ///
+    /// - Parameters:
+    ///   - url: A URL para a qual fazer a requisição.
+    ///   - method: O método HTTP a ser usado.
+    ///   - headers: Os cabeçalhos HTTP a serem enviados.
+    ///   - body: O corpo da requisição.
+    ///   - completion: A closure chamada após a conclusão da requisição.
     public func request<T: Decodable>(url: URL,
                                       method: HttpMethodtype = .get,
                                       headers: [String: String]? = nil,
