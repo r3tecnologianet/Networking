@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Networking'
-  s.version          = '0.1.0'
+  s.version          = '0.1.2'
   s.summary          = 'Library for Networking Comunication.'
 
   s.description      = <<-DESC
