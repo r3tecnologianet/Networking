@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Networking
+@testable import R3Networking
 
 struct Todo: Codable, Equatable {
     let userId: Int

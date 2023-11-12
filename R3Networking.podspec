@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name             = 'Networking'
+  s.name             = 'R3Networking'
   s.version          = '0.1.2'
   s.summary          = 'Library for Networking Comunication.'
 
