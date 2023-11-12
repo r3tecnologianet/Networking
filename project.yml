@@ -1,4 +1,4 @@
-name: "Networking"
+name: "R3Networking"
 
 ############
 # Options
@@ -16,7 +16,7 @@ options:
 ############
 
 targets:
-  Networking:
+  R3Networking:
     type: framework
     platform: iOS
     sources:
@@ -29,10 +29,10 @@ targets:
           else
             echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
           fi
-  NetworkingTests:
+  R3NetworkingTests:
     type: bundle.unit-test
     platform: [iOS]
     sources:
       - Tests
     dependencies:
-      - target: Networking
+      - target: R3Networking

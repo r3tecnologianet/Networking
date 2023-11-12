@@ -1,10 +1,10 @@
-// swift-tools-version: 5.6
+// swift-tools-version: 5.5
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
-    name: "Networking",
+    name: "R3Networking",
     defaultLocalization: "pt-BR",
     platforms: [
         .iOS(.v13)
@@ -12,8 +12,8 @@ let package = Package(
     products: [
 
         .library(
-            name: "Networking",
-            targets: ["Networking"]
+            name: "R3Networking",
+            targets: ["R3Networking"]
         )
     ],
     dependencies: [
@@ -22,10 +22,10 @@ let package = Package(
     targets: [
 
         .target(
-            name: "Networking",
+            name: "R3Networking",
             dependencies: []),
         .testTarget(
-            name: "NetworkingTests",
-            dependencies: ["Networking"])
+            name: "R3NetworkingTests",
+            dependencies: ["R3Networking"])
     ]
 )
